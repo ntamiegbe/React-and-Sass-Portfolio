@@ -10,7 +10,7 @@ const Footer = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const { username, email, message } = formData;
+  const { name, email, message } = formData;
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
@@ -22,9 +22,9 @@ const Footer = () => {
 
     const contact = {
       _type: 'contact',
-      name: formData.username,
-      email: formData.email,
-      message: formData.message,
+      name: name,
+      email: email,
+      message: message,
     };
 
     client.create(contact)
@@ -37,22 +37,31 @@ const Footer = () => {
 
   return (
     <>
-      <h2 className="head-text">Make an Enquiry <span> <br /> or <br /> just have a chat with me </span> </h2>
+      <h2 className="head-text"> Let's Connect </h2>
 
       <div className="app__footer-cards">
         <div className="app__footer-card ">
           <img src={images.email} alt="email" />
-          <a href="mailto:ntamiegbe00@gmail.com" className="p-text">ntamiegbe00@gmail.com</a>
+          <a href="mailto:ntamiegbe00@gmail.com" className="p-text">Email</a>
         </div>
         <div className="app__footer-card">
           <img src={images.mobile} alt="phone" />
-          <a href="tel:+234 (0) 8087081503 " className="p-text">+234 (0) 8087081503</a>
+          <a href="tel:+234 (0) 8087081503" className="p-text">Call</a>
+        </div>
+        <div className="app__footer-card">
+          <img src={images.whatsapp} alt="phone" />
+          <a href="https://wa.me/8087081503" className="p-text">Whatsapp</a>
+        </div>
+        <div className="app__footer-card">
+          <img src={images.twitter} alt="phone" />
+          <a href="https://twitter.com/ntamiegbe" className="p-text">Twitter</a>
         </div>
       </div>
-      {!isFormSubmitted ? (
+       
+      {/* {!isFormSubmitted ? (
         <div className="app__footer-form app__flex">
           <div className="app__flex">
-            <input className="p-text" type="text" placeholder="Your Name" name="username" value={username} onChange={handleChangeInput} />
+            <input className="p-text" type="text" placeholder="Your Name" name="name" value={name} onChange={handleChangeInput} />
           </div>
           <div className="app__flex">
             <input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />
@@ -74,7 +83,7 @@ const Footer = () => {
             Thank you for getting in touch!
           </h3>
         </div>
-      )}
+      )} */}
     </>
   );
 };
