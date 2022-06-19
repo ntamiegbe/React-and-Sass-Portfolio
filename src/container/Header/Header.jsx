@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion';
+import { BsTwitter, BsWhatsapp, BsGithub } from 'react-icons/bs'
 
 import { images } from '../../constants';
 
@@ -36,9 +37,27 @@ const Header = () => {
           </div>
 
           <div className='tag-cmp app__flex'>
-          <p className='p-text'> Web Developer </p>
-          <p className='p-text'> Freelancer </p>
+            <p className='p-text'> Web Developer </p>
+            <p className='p-text'> Freelancer </p>
           </div>
+
+          <div className="soc-cmp app__flex app__social-header">
+            <div>
+              <a href='https://twitter.com/ntamiegbe' target="_blank">
+                <BsTwitter />
+              </a>
+            </div>
+            <div>
+              <a href='https://github.com/ntamiegbe' target="_blank">
+                <BsGithub />
+              </a>
+            </div>
+            <div>
+              <a href='https://wa.me/8087081503' target="_blank">
+                <BsWhatsapp />
+              </a>
+            </div>
+          </div>  
         </div>
       </motion.div>
 

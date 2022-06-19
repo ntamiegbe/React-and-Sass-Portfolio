@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ReactTooltip from 'react-tooltip';
 
-import { AppWrap } from '../../wrapper';
+import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
 import './Skills.scss';
 
@@ -25,7 +25,7 @@ const Skills = () => {
 
   return (
     <>
-      <h2 className="head-text">Skills & <span> Experience </span> </h2>
+      <h2 className="head-text"> Skills & Experience </h2>
 
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
@@ -46,6 +46,7 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
+
         <div className="app__skills-exp">
           {experiences.map((experience) => (
             <motion.div
@@ -63,7 +64,6 @@ const Skills = () => {
                       transition={{ duration: 0.5 }}
                       className="app__skills-exp-work"
                       data-tip
-                      data-for={work.name}
                       key={work.name}
                     >
                       <h4 className="bold-text">{work.name}</h4>
@@ -74,6 +74,7 @@ const Skills = () => {
                       effect="solid"
                       arrowColor="#fff"
                       className="skills-tooltip"
+                      key={work.desc}
                     >
                       {work.desc}
                     </ReactTooltip>
@@ -88,4 +89,8 @@ const Skills = () => {
   );
 };
 
-export default AppWrap(Skills, 'skills')
+export default AppWrap(
+  MotionWrap(Skills, 'app__skills'),
+  'skills',
+  'app__whitebg',
+);
