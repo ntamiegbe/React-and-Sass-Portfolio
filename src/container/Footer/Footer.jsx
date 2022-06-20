@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
         <div className="app__footer-card">
           <img src={images.whatsapp} alt="phone" />
-          <a href="https://wa.me/8087081503" className="p-text">Whatsapp</a>
+          <a href="https://wa.me/+2348087081503" className="p-text">Whatsapp</a>
         </div>
         <div className="app__footer-card">
           <img src={images.twitter} alt="phone" />
