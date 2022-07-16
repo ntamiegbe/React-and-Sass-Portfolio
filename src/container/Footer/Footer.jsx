@@ -7,8 +7,8 @@ import './Footer.scss';
 
 const Footer = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [ setIsFormSubmitted] = useState(false);
+  const [ setLoading] = useState(false);
 
   const { name, email, message } = formData;
 
@@ -46,7 +46,7 @@ const Footer = () => {
         </div>
         <div className="app__footer-card">
           <img src={images.mobile} alt="phone" />
-          <a href="tel:+234 (0) 8087081503" className="p-text">Call</a>
+          <a href="tel:+2348087081503" className="p-text">Call</a>
         </div>
         <div className="app__footer-card">
           <img src={images.whatsapp} alt="phone" />
